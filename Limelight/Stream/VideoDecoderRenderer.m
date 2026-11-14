@@ -35,6 +35,9 @@ extern int ff_isom_write_av1c(AVIOContext *pb, const uint8_t *buf, int size,
     
     CADisplayLink* _displayLink;
     BOOL framePacing;
+#if TARGET_OS_TV && DEBUG
+    CFTimeInterval _lastVideoDiagnostic;
+#endif
 }
 
 - (void)reinitializeDisplayLayer
@@ -581,7 +584,25 @@ int DrSubmitDecodeUnit(PDECODE_UNIT decodeUnit);
     CMSampleBufferRef sampleBuffer;
     
     CMSampleTimingInfo sampleTiming = {kCMTimeInvalid, CMTimeMake(du->presentationTimeUs, 1000000), kCMTimeInvalid};
-    
+
+    // RTP timestamps belong to the host, not this device's uptime. Anchor the
+    // playback clock to the first frame, including when resuming an old session.
+    if (displayLayer.controlTimebase == NULL) {
+        CMTimebaseRef timebase = NULL;
+        status = CMTimebaseCreateWithSourceClock(kCFAllocatorDefault, CMClockGetHostTimeClock(), &timebase);
+        if (status == noErr) status = CMTimebaseSetTime(timebase, sampleTiming.presentationTimeStamp);
+        if (status == noErr) status = CMTimebaseSetRate(timebase, 1.0);
+        if (status != noErr) {
+            Log(LOG_E, @"Video playback clock setup failed: %d", (int)status);
+            if (timebase) CFRelease(timebase);
+            CFRelease(dataBlockBuffer);
+            CFRelease(frameBlockBuffer);
+            return DR_NEED_IDR;
+        }
+        displayLayer.controlTimebase = timebase;
+        CFRelease(timebase);
+    }
+
     status = CMSampleBufferCreateReady(kCFAllocatorDefault,
                                   frameBlockBuffer,
                                   formatDesc, 1, 1,
@@ -594,6 +615,15 @@ int DrSubmitDecodeUnit(PDECODE_UNIT decodeUnit);
         return DR_NEED_IDR;
     }
 
+#if TARGET_OS_TV && DEBUG
+    if (CACurrentMediaTime() - _lastVideoDiagnostic > 2) {
+        _lastVideoDiagnostic = CACurrentMediaTime();
+        NSLog(@"Sofa video: frame=%d pts=%llu clock=%.3f status=%ld ready=%d pending=%d mode=%@",
+              du->frameNumber, (unsigned long long)du->presentationTimeUs,
+              CMTimeGetSeconds(CMTimebaseGetTime(displayLayer.controlTimebase)), (long)displayLayer.status, displayLayer.readyForMoreMediaData,
+              LiGetPendingVideoFrames(), NSRunLoop.currentRunLoop.currentMode);
+    }
+#endif
     // Enqueue the next frame
     [self->displayLayer enqueueSampleBuffer:sampleBuffer];
     

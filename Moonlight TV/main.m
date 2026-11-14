@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "SofaAppDelegate.h"
+#import "SofaDictation.h"
 
 #define SDL_MAIN_HANDLED
 #import <SDL.h>
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        [SofaDictation runSelfCheck];
         SDL_SetMainReady();
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        [SofaAppDelegate importPairing];
+        return UIApplicationMain(argc, argv, NSStringFromClass(SofaApplication.class), NSStringFromClass([SofaAppDelegate class]));
     }
 }

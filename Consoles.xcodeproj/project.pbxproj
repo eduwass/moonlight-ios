@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	"archiveVersion" = 1;
+	"classes" = {
+	};
+	"objectVersion" = 54;
+	"objects" = {
+		"88DCD6AFD42408C0E85877B1" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "wrapper.application";
+			"path" = "Consoles.app";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"6994554AA5335B8919EE9922" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "wrapper.app-extension";
+			"path" = "Consoles Top Shelf.appex";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"BC2477D57A7D873841FD71BF" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.c.objc";
+			"path" = "Consoles/main.m";
+			"sourceTree" = "SOURCE_ROOT";
+		};
+		"E7860B2200F9C6C821256C59" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.c.objc";
+			"path" = "Moonlight TV/SofaTVControl.m";
+			"sourceTree" = "SOURCE_ROOT";
+		};
+		"8DF01963B64B56F072F8D60A" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.c.objc";
+			"path" = "Consoles/ContentProvider.m";
+			"sourceTree" = "SOURCE_ROOT";
+		};
+		"51D61E54ECB52C659396D3C0" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "folder";
+			"path" = "SofaArtwork";
+			"sourceTree" = "SOURCE_ROOT";
+		};
+		"02907E78536259331266FACC" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "folder.assetcatalog";
+			"path" = "Consoles/Assets.xcassets";
+			"sourceTree" = "SOURCE_ROOT";
+		};
+		"7E2D50BEEE87C4313A03A9B7" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "BC2477D57A7D873841FD71BF";
+		};
+		"0C83DD7DC55A9791683FF24F" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "E7860B2200F9C6C821256C59";
+		};
+		"5F9DFC021C64C9BE28F9005B" = {
+			"isa" = "PBXSourcesBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ("7E2D50BEEE87C4313A03A9B7", "0C83DD7DC55A9791683FF24F");
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"D22B6BCECCC887745308A7CE" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "8DF01963B64B56F072F8D60A";
+		};
+		"F78FEC12B190F6DA3DD935D1" = {
+			"isa" = "PBXSourcesBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ("D22B6BCECCC887745308A7CE");
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"8660A8C0A86FBABB36813841" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "51D61E54ECB52C659396D3C0";
+		};
+		"8258F467D0A53FD28FA36129" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "02907E78536259331266FACC";
+		};
+		"B3AFC0E1ECF5DBA983960EA6" = {
+			"isa" = "PBXResourcesBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ("8660A8C0A86FBABB36813841", "8258F467D0A53FD28FA36129");
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"F4FCC91223AA8CA02594CA60" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "51D61E54ECB52C659396D3C0";
+		};
+		"250E6FB3136C4D4A0D3FEDEF" = {
+			"isa" = "PBXResourcesBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ("F4FCC91223AA8CA02594CA60");
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"D4A3A213F3E84D21D1220843" = {
+			"isa" = "PBXFrameworksBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ();
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"59C366DC0B21BFF1BCFEE0F2" = {
+			"isa" = "PBXFrameworksBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ();
+			"runOnlyForDeploymentPostprocessing" = 0;
+		};
+		"2701A111778335C9F90517E6" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "6994554AA5335B8919EE9922";
+			"settings" = {
+				"ATTRIBUTES" = ("RemoveHeadersOnCopy");
+			};
+		};
+		"42484AF1CCEDCDBC2E4E2BAA" = {
+			"isa" = "PBXCopyFilesBuildPhase";
+			"buildActionMask" = 2147483647;
+			"files" = ("2701A111778335C9F90517E6");
+			"runOnlyForDeploymentPostprocessing" = 0;
+			"dstPath" = "";
+			"dstSubfolderSpec" = 13;
+			"name" = "Embed App Extensions";
+		};
+		"67C67FD4188E89A4372A2D4B" = {
+			"isa" = "PBXContainerItemProxy";
+			"containerPortal" = "498B9AC3CFBCF41E421ADA77";
+			"proxyType" = 1;
+			"remoteGlobalIDString" = "A221CF567936F5F383262843";
+			"remoteInfo" = "Consoles Top Shelf";
+		};
+		"445BDF59145D89ACEBF1DB2A" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "A221CF567936F5F383262843";
+			"targetProxy" = "67C67FD4188E89A4372A2D4B";
+		};
+		"59DED9212FE4364F249DF1F9" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+			"buildSettings" = {
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"SDKROOT" = "appletvos";
+				"SUPPORTED_PLATFORMS" = "appletvos appletvsimulator";
+				"TARGETED_DEVICE_FAMILY" = "3";
+				"TVOS_DEPLOYMENT_TARGET" = "17.4";
+				"DEVELOPMENT_TEAM" = "U5XY5MYRXF";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"GCC_PREPROCESSOR_DEFINITIONS" = ("$(inherited)", "DEBUG=1");
+				"GCC_OPTIMIZATION_LEVEL" = "0";
+			};
+		};
+		"9212C718305B185E9867FDE3" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+			"buildSettings" = {
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"SDKROOT" = "appletvos";
+				"SUPPORTED_PLATFORMS" = "appletvos appletvsimulator";
+				"TARGETED_DEVICE_FAMILY" = "3";
+				"TVOS_DEPLOYMENT_TARGET" = "17.4";
+				"DEVELOPMENT_TEAM" = "U5XY5MYRXF";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"GCC_PREPROCESSOR_DEFINITIONS" = ("$(inherited)");
+				"GCC_OPTIMIZATION_LEVEL" = "s";
+			};
+		};
+		"715CAEE9D6DF7D2F91A8F989" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = ("59DED9212FE4364F249DF1F9", "9212C718305B185E9867FDE3");
+			"defaultConfigurationIsVisible" = 0;
+			"defaultConfigurationName" = "Release";
+		};
+		"2C85A60FA6176EE27FD9D616" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+			"buildSettings" = {
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.eduwass.sofa.consoles";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "Consoles/Info.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "App Icon & Top Shelf Image";
+				"OTHER_LDFLAGS" = ("-framework", "UIKit", "-framework", "TVServices", "-framework", "Security");
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks");
+			};
+		};
+		"03D93B97B37ACA326A198DCA" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+			"buildSettings" = {
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.eduwass.sofa.consoles";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "Consoles/Info.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"ASSETCATALOG_COMPILER_APPICON_NAME" = "App Icon & Top Shelf Image";
+				"OTHER_LDFLAGS" = ("-framework", "UIKit", "-framework", "TVServices", "-framework", "Security");
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks");
+			};
+		};
+		"16DAC7E434DD409EC5C0C039" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = ("2C85A60FA6176EE27FD9D616", "03D93B97B37ACA326A198DCA");
+			"defaultConfigurationIsVisible" = 0;
+			"defaultConfigurationName" = "Release";
+		};
+		"6D1FDEE396A4BE17E4CA7168" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+			"buildSettings" = {
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.eduwass.sofa.consoles.topshelf";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "Consoles/TopShelf.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"APPLICATION_EXTENSION_API_ONLY" = "YES";
+				"SKIP_INSTALL" = "YES";
+				"OTHER_LDFLAGS" = ("-framework", "UIKit", "-framework", "TVServices");
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+			};
+		};
+		"38D6880AF44160486694996A" = {
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+			"buildSettings" = {
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.eduwass.sofa.consoles.topshelf";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"INFOPLIST_FILE" = "Consoles/TopShelf.plist";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"APPLICATION_EXTENSION_API_ONLY" = "YES";
+				"SKIP_INSTALL" = "YES";
+				"OTHER_LDFLAGS" = ("-framework", "UIKit", "-framework", "TVServices");
+				"LD_RUNPATH_SEARCH_PATHS" = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
+			};
+		};
+		"DE396E4D4D99A4550512525E" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = ("6D1FDEE396A4BE17E4CA7168", "38D6880AF44160486694996A");
+			"defaultConfigurationIsVisible" = 0;
+			"defaultConfigurationName" = "Release";
+		};
+		"53A9D8059D5C9AC7AC8FBDD8" = {
+			"isa" = "PBXNativeTarget";
+			"buildConfigurationList" = "16DAC7E434DD409EC5C0C039";
+			"buildPhases" = ("5F9DFC021C64C9BE28F9005B", "D4A3A213F3E84D21D1220843", "B3AFC0E1ECF5DBA983960EA6", "42484AF1CCEDCDBC2E4E2BAA");
+			"buildRules" = ();
+			"dependencies" = ("445BDF59145D89ACEBF1DB2A");
+			"name" = "Consoles";
+			"productName" = "Consoles";
+			"productReference" = "88DCD6AFD42408C0E85877B1";
+			"productType" = "com.apple.product-type.application";
+		};
+		"A221CF567936F5F383262843" = {
+			"isa" = "PBXNativeTarget";
+			"buildConfigurationList" = "DE396E4D4D99A4550512525E";
+			"buildPhases" = ("F78FEC12B190F6DA3DD935D1", "59C366DC0B21BFF1BCFEE0F2", "250E6FB3136C4D4A0D3FEDEF");
+			"buildRules" = ();
+			"dependencies" = ();
+			"name" = "Consoles Top Shelf";
+			"productName" = "Consoles Top Shelf";
+			"productReference" = "6994554AA5335B8919EE9922";
+			"productType" = "com.apple.product-type.app-extension";
+		};
+		"E35A4BB9B5F95C9822E5678D" = {
+			"isa" = "PBXGroup";
+			"children" = ("88DCD6AFD42408C0E85877B1", "6994554AA5335B8919EE9922");
+			"name" = "Products";
+			"sourceTree" = "<group>";
+		};
+		"B90CAAF4BC7B0266F0150290" = {
+			"isa" = "PBXGroup";
+			"children" = ("BC2477D57A7D873841FD71BF", "E7860B2200F9C6C821256C59", "8DF01963B64B56F072F8D60A", "02907E78536259331266FACC", "51D61E54ECB52C659396D3C0", "E35A4BB9B5F95C9822E5678D");
+			"sourceTree" = "<group>";
+		};
+		"498B9AC3CFBCF41E421ADA77" = {
+			"isa" = "PBXProject";
+			"attributes" = {
+				"LastUpgradeCheck" = "1600";
+				"TargetAttributes" = {
+					"53A9D8059D5C9AC7AC8FBDD8" = {
+						"ProvisioningStyle" = "Automatic";
+					};
+					"A221CF567936F5F383262843" = {
+						"ProvisioningStyle" = "Automatic";
+					};
+				};
+			};
+			"buildConfigurationList" = "715CAEE9D6DF7D2F91A8F989";
+			"compatibilityVersion" = "Xcode 14.0";
+			"developmentRegion" = "en";
+			"hasScannedForEncodings" = 0;
+			"knownRegions" = ("en", "Base");
+			"mainGroup" = "B90CAAF4BC7B0266F0150290";
+			"productRefGroup" = "E35A4BB9B5F95C9822E5678D";
+			"projectDirPath" = "";
+			"projectRoot" = "";
+			"targets" = ("53A9D8059D5C9AC7AC8FBDD8", "A221CF567936F5F383262843");
+		};
+	};
+	"rootObject" = "498B9AC3CFBCF41E421ADA77";
+}

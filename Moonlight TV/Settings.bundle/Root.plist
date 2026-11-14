@@ -64,7 +64,7 @@
 			<key>Key</key>
 			<string>bitrate</string>
 			<key>DefaultValue</key>
-			<string>20000</string>
+			<string>25000</string>
 			<key>Titles</key>
 			<array>
 				<string>0.5 Mbps</string>

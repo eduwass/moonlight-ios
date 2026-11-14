@@ -6,7 +6,34 @@
 	objectVersion = 54;
 	objects = {
 
+        EF0000000000000000000030 = {isa = PBXFileReference; lastKnownFileType = folder; path = SofaArtwork; sourceTree = SOURCE_ROOT; };
+        EF0000000000000000000031 = {isa = PBXBuildFile; fileRef = EF0000000000000000000030; };
+        EF0000000000000000000032 = {isa = PBXBuildFile; fileRef = EF0000000000000000000030; };
+
+
+        EF0000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaTVControl.m; sourceTree = "<group>"; };
+        EF0000000000000000000002 = {isa = PBXBuildFile; fileRef = EF0000000000000000000001; };
+        EF0000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaTVControl.h; sourceTree = "<group>"; };
+        EF0000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaConsoleArt.h; sourceTree = "<group>"; };
+        EF0000000000000000000010 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Moonlight Top Shelf/ContentProvider.m"; sourceTree = SOURCE_ROOT; };
+        EF0000000000000000000011 = {isa = PBXBuildFile; fileRef = EF0000000000000000000010; };
+        EF0000000000000000000012 = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Moonlight Top Shelf.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+        EF0000000000000000000013 = {isa = PBXBuildFile; fileRef = EF0000000000000000000012; settings = {ATTRIBUTES = (RemoveHeadersOnCopy,);}; };
+        EF0000000000000000000014 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (EF0000000000000000000011,); runOnlyForDeploymentPostprocessing = 0; };
+        EF0000000000000000000015 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+        EF0000000000000000000016 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (EF0000000000000000000032,); runOnlyForDeploymentPostprocessing = 0; };
+        EF0000000000000000000017 = {isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (EF0000000000000000000013,); name = "Embed App Extensions"; runOnlyForDeploymentPostprocessing = 0; };
+        EF0000000000000000000018 = {isa = PBXContainerItemProxy; containerPortal = FB290CE619B2C406004C83CF; proxyType = 1; remoteGlobalIDString = EF0000000000000000000020; remoteInfo = "Moonlight Top Shelf"; };
+        EF0000000000000000000019 = {isa = PBXTargetDependency; target = EF0000000000000000000020; targetProxy = EF0000000000000000000018; };
+        EF0000000000000000000020 = {isa = PBXNativeTarget; buildConfigurationList = EF0000000000000000000021; buildPhases = (EF0000000000000000000014, EF0000000000000000000015, EF0000000000000000000016,); buildRules = (); dependencies = (); name = "Moonlight Top Shelf"; productName = "Moonlight Top Shelf"; productReference = EF0000000000000000000012; productType = "com.apple.product-type.app-extension"; };
+        EF0000000000000000000021 = {isa = XCConfigurationList; buildConfigurations = (EF0000000000000000000022, EF0000000000000000000023,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        EF0000000000000000000022 = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = "Moonlight Top Shelf/Sofa.entitlements"; CLANG_ENABLE_MODULES = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = "Moonlight Top Shelf/Info.plist"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",); OTHER_LDFLAGS = ("-framework", TVServices, "-framework", UIKit,); PRODUCT_BUNDLE_IDENTIFIER = com.eduwass.moonlightnext.tv.topshelf; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = appletvos; SKIP_INSTALL = YES; TARGETED_DEVICE_FAMILY = 3; TVOS_DEPLOYMENT_TARGET = 17.4; }; name = Debug; };
+        EF0000000000000000000023 = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = "Moonlight Top Shelf/Sofa.entitlements"; CLANG_ENABLE_MODULES = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = "Moonlight Top Shelf/Info.plist"; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks",); OTHER_LDFLAGS = ("-framework", TVServices, "-framework", UIKit,); PRODUCT_BUNDLE_IDENTIFIER = com.eduwass.moonlightnext.tv.topshelf; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = appletvos; SKIP_INSTALL = YES; TARGETED_DEVICE_FAMILY = 3; TVOS_DEPLOYMENT_TARGET = 17.4; }; name = Release; };
+
+
 /* Begin PBXBuildFile section */
+        ED1000000000000000000009 = {isa = PBXBuildFile; fileRef = ED0000000000000000000009; };
+		ED1000000000000000000008 /* SofaCursorChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000008; };
 		693B3A9B218638CD00982F7B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 693B3A9A218638CD00982F7B /* Settings.bundle */; };
 		98181BE92791277400E43572 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98181BE82791275D00E43572 /* libSDL2.a */; };
 		98181BEB2791278F00E43572 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98181BEA2791278300E43572 /* libSDL2.a */; };
@@ -136,6 +163,10 @@
 		FBD349621A0089F6002D2A60 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD349611A0089F6002D2A60 /* DataManager.m */; };
 		FBDE86E019F7A837001C18A8 /* UIComputerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE86DF19F7A837001C18A8 /* UIComputerView.m */; };
 		FBDE86E619F82297001C18A8 /* UIAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE86E519F82297001C18A8 /* UIAppView.m */; };
+		ED1000000000000000000002 /* SofaInput.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000002 /* SofaInput.m */; };
+		ED1000000000000000000004 /* SofaStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000004 /* SofaStreamController.m */; };
+		ED1000000000000000000006 /* SofaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000006 /* SofaAppDelegate.m */; };
+		ED1000000000000000000007 /* SofaHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000007 /* SofaHomeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +201,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+        ED0000000000000000000009 = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaDictation.m; sourceTree = "<group>"; };
+		ED0000000000000000000008 /* SofaCursorChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaCursorChannel.m; sourceTree = "<group>"; };
 		566E9D2B2770B23A00EF7BFE /* Moonlight v1.7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Moonlight v1.7.xcdatamodel"; sourceTree = "<group>"; };
 		693B3A9A218638CD00982F7B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9803CCAB254F9EAF00EE185E /* ConnectionCallbacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionCallbacks.h; sourceTree = "<group>"; };
@@ -320,6 +353,14 @@
 		FBDE86DF19F7A837001C18A8 /* UIComputerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIComputerView.m; sourceTree = "<group>"; };
 		FBDE86E419F82297001C18A8 /* UIAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAppView.h; sourceTree = "<group>"; };
 		FBDE86E519F82297001C18A8 /* UIAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAppView.m; sourceTree = "<group>"; };
+		ED0000000000000000000000 /* SofaInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaInput.h; sourceTree = "<group>"; };
+		ED0000000000000000000001 /* SofaInputMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaInputMath.h; sourceTree = "<group>"; };
+		ED0000000000000000000002 /* SofaInput.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaInput.m; sourceTree = "<group>"; };
+		ED0000000000000000000003 /* SofaStreamController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaStreamController.h; sourceTree = "<group>"; };
+		ED0000000000000000000004 /* SofaStreamController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaStreamController.m; sourceTree = "<group>"; };
+		ED0000000000000000000005 /* SofaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SofaAppDelegate.h; sourceTree = "<group>"; };
+		ED0000000000000000000006 /* SofaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaAppDelegate.m; sourceTree = "<group>"; };
+		ED0000000000000000000007 /* SofaHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SofaHomeController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +427,17 @@
 			isa = PBXGroup;
 			children = (
 				FB1A675E2132419700507771 /* Main.storyboard */,
+				EF0000000000000000000030, EF0000000000000000000001, EF0000000000000000000003, EF0000000000000000000004, EF0000000000000000000010,
+				ED0000000000000000000000 /* SofaInput.h */,
+				ED0000000000000000000001 /* SofaInputMath.h */,
+				ED0000000000000000000008 /* SofaCursorChannel.m */,
+				ED0000000000000000000002 /* SofaInput.m */,
+				ED0000000000000000000003 /* SofaStreamController.h */,
+				ED0000000000000000000004 /* SofaStreamController.m */,
+                ED0000000000000000000009 /* SofaDictation.m */,
+				ED0000000000000000000005 /* SofaAppDelegate.h */,
+				ED0000000000000000000006 /* SofaAppDelegate.m */,
+				ED0000000000000000000007 /* SofaHomeController.m */,
 				FB1A67612132419A00507771 /* Assets.xcassets */,
 				FB1A67632132419A00507771 /* Info.plist */,
 				FB1A67642132419A00507771 /* main.m */,
@@ -695,11 +747,13 @@
 				FB1A674F2132419700507771 /* Sources */,
 				FB1A67502132419700507771 /* Frameworks */,
 				FB1A67512132419700507771 /* Resources */,
+				EF0000000000000000000017,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FB1A68172132509800507771 /* PBXTargetDependency */,
+				EF0000000000000000000019,
 			);
 			name = "Moonlight TV";
 			packageProductDependencies = (
@@ -780,6 +834,7 @@
 			targets = (
 				FB290CED19B2C406004C83CF /* Moonlight */,
 				FB1A67522132419700507771 /* Moonlight TV */,
+				EF0000000000000000000020,
 			);
 		};
 /* End PBXProject section */
@@ -806,7 +861,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693B3A9B218638CD00982F7B /* Settings.bundle in Resources */,
+				EF0000000000000000000031,
+                693B3A9B218638CD00982F7B /* Settings.bundle in Resources */,
 				FB1A681E21328A1B00507771 /* Images.xcassets in Resources */,
 				FB1A67622132419A00507771 /* Assets.xcassets in Resources */,
 				FB1A67602132419700507771 /* Main.storyboard in Resources */,
@@ -833,6 +889,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9827E7A42514366900F25707 /* HapticContext.m in Sources */,
+				EF0000000000000000000002,
+				ED1000000000000000000008 /* SofaCursorChannel.m in Sources */,
+				ED1000000000000000000002 /* SofaInput.m in Sources */,
+				ED1000000000000000000004 /* SofaStreamController.m in Sources */,
+                ED1000000000000000000009 /* SofaDictation.m in Sources */,
+				ED1000000000000000000006 /* SofaAppDelegate.m in Sources */,
+				ED1000000000000000000007 /* SofaHomeController.m in Sources */,
 				9897B6A62212732C00966419 /* Controller.m in Sources */,
 				9865DC3E21332D660005B9B9 /* MainFrameViewController.m in Sources */,
 				9865DC36213287F30005B9B9 /* AppDelegate.m in Sources */,
@@ -995,6 +1058,8 @@
 					"$(PROJECT_DIR)/libs/**",
 				);
 				INFOPLIST_FILE = "Moonlight TV/Info.plist";
+                CODE_SIGN_ENTITLEMENTS = "Moonlight TV/Sofa.entitlements";
+                OTHER_LDFLAGS = ("$(inherited)", "-framework", TVServices,);
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1015,7 +1080,7 @@
 				);
 				MARKETING_VERSION = 9.0.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moonlight-stream.Moonlight";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduwass.moonlightnext.tv";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Limelight/Input/Moonlight-Bridging-Header.h";
@@ -1023,7 +1088,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_TVOS_DEPLOYMENT_TARGET)";
+				TVOS_DEPLOYMENT_TARGET = 17.4;
 			};
 			name = Debug;
 		};
@@ -1051,6 +1116,8 @@
 					"$(PROJECT_DIR)/libs/**",
 				);
 				INFOPLIST_FILE = "Moonlight TV/Info.plist";
+                CODE_SIGN_ENTITLEMENTS = "Moonlight TV/Sofa.entitlements";
+                OTHER_LDFLAGS = ("$(inherited)", "-framework", TVServices,);
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1071,7 +1138,7 @@
 				);
 				MARKETING_VERSION = 9.0.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.moonlight-stream.Moonlight";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduwass.moonlightnext.tv";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1079,7 +1146,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Moonlight-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_TVOS_DEPLOYMENT_TARGET)";
+				TVOS_DEPLOYMENT_TARGET = 17.4;
 			};
 			name = Release;
 		};

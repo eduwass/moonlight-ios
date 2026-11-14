@@ -42,6 +42,10 @@ static SDL_AudioDeviceID audioDevice;
 static OPUS_MULTISTREAM_CONFIGURATION audioConfig;
 static void* audioBuffer;
 static int audioFrameSize;
+#if TARGET_OS_TV
+static unsigned audioEmptyQueues, audioSkipped, audioConcealed;
+static Uint64 audioLastSample, audioLastReport, audioMaxGap;
+#endif
 
 static VideoDecoderRenderer* renderer;
 
@@ -222,6 +226,10 @@ int ArInit(int audioConfiguration, POPUS_MULTISTREAM_CONFIGURATION opusConfig, v
     want.format = AUDIO_S16;
     want.channels = opusConfig->channelCount;
     want.samples = opusConfig->samplesPerFrame;
+#if TARGET_OS_TV
+    // Match the desktop SDL renderer's jitter cushion: at least 10 ms at 48 kHz.
+    want.samples = SDL_max(480, opusConfig->samplesPerFrame * 3);
+#endif
 
     audioDevice = SDL_OpenAudioDevice(NULL, 0, &want, &have, 0);
     if (audioDevice == 0) {
@@ -229,8 +237,18 @@ int ArInit(int audioConfiguration, POPUS_MULTISTREAM_CONFIGURATION opusConfig, v
         ArCleanup();
         return -1;
     }
+
+#if TARGET_OS_TV
+    Log(LOG_I, @"TV audio: packet=%d samples, device=%d samples at %d Hz",
+        opusConfig->samplesPerFrame, have.samples, have.freq);
+#endif
     
     audioConfig = *opusConfig;
+#if TARGET_OS_TV
+    audioEmptyQueues = audioSkipped = audioConcealed = 0;
+    audioLastSample = audioMaxGap = 0;
+    audioLastReport = SDL_GetTicks64();
+#endif
     audioFrameSize = opusConfig->samplesPerFrame * sizeof(short) * opusConfig->channelCount;
     audioBuffer = SDL_malloc(audioFrameSize);
     if (audioBuffer == NULL) {
@@ -283,6 +301,26 @@ void ArCleanup(void)
 void ArDecodeAndPlaySample(char* sampleData, int sampleLength)
 {
     int decodeLen;
+#if TARGET_OS_TV
+    Uint64 now = SDL_GetTicks64();
+    Uint32 queued = SDL_GetQueuedAudioSize(audioDevice);
+    if (audioLastSample) {
+        audioMaxGap = SDL_max(audioMaxGap, now - audioLastSample);
+        if (queued == 0) audioEmptyQueues++;
+    }
+    audioLastSample = now;
+    if (!sampleData || sampleLength == 0) audioConcealed++;
+    if (LiGetPendingAudioDuration() > 30) audioSkipped++;
+    if (now - audioLastReport >= 5000) {
+        Log(LOG_I, @"TV audio health: emptyQueues=%u skipped=%u concealed=%u maxGapMs=%llu queuedMs=%u pendingMs=%d",
+            audioEmptyQueues, audioSkipped, audioConcealed, (unsigned long long)audioMaxGap,
+            queued * 1000 / (audioConfig.sampleRate * audioConfig.channelCount * (unsigned)sizeof(short)),
+            LiGetPendingAudioDuration());
+        audioLastReport = now;
+        audioEmptyQueues = audioSkipped = audioConcealed = 0;
+        audioMaxGap = 0;
+    }
+#endif
     
     // Don't queue if there's already more than 30 ms of audio data waiting
     // in Moonlight's audio queue.

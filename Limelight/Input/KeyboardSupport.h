@@ -18,6 +18,7 @@ struct KeyEvent {
 
 + (BOOL)sendKeyEventForPress:(UIPress*)press down:(BOOL)down API_AVAILABLE(ios(13.4));
 + (BOOL)sendKeyEvent:(UIKey*)key down:(BOOL)down API_AVAILABLE(ios(13.4));
++ (BOOL)sendKeyCode:(UIKeyboardHIDUsage)usage modifiers:(UIKeyModifierFlags)modifiers down:(BOOL)down;
 + (struct KeyEvent) translateKeyEvent:(unichar) inputChar withModifierFlags:(UIKeyModifierFlags)modifierFlags;
 
 @end

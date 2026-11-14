@@ -1,0 +1,28 @@
+{
+  "images": [
+    {
+      "idiom": "tv",
+      "scale": "1x",
+      "filename": "consoles-shelf-v3-1x.png"
+    },
+    {
+      "idiom": "tv",
+      "scale": "2x",
+      "filename": "consoles-shelf-v3-2x.png"
+    },
+    {
+      "idiom": "tv-marketing",
+      "scale": "1x",
+      "filename": "consoles-shelf-v3-1x.png"
+    },
+    {
+      "idiom": "tv-marketing",
+      "scale": "2x",
+      "filename": "consoles-shelf-v3-2x.png"
+    }
+  ],
+  "info": {
+    "version": 1,
+    "author": "xcode"
+  }
+}
